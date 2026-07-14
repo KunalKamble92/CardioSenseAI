@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}Analyzing...{% endblock %}
+
+{% block content %}
+
+<section class="analysis-section">
+
+    <div class="container">
+
+        <div class="analysis-card">
+
+            <div class="robot-circle">
+
+                <i class="fas fa-robot"></i>
+
+            </div>
+
+            <h2>CardioSense AI</h2>
+
+            <p>Analyzing Patient Data...</p>
+
+            <div class="progress mt-4">
+
+                <div id="loadingBar"
+                     class="progress-bar progress-bar-striped progress-bar-animated"
+                     style="width:0%">
+
+                </div>
+
+            </div>
+
+            <div class="analysis-steps mt-5">
+
+                <p id="stepText">
+
+                    Preparing AI Engine...
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+
+const steps=[
+
+"✔ Validating Patient Information",
+
+"✔ Scaling Clinical Features",
+
+"✔ Running Logistic Regression",
+
+"✔ Calculating Risk Probability",
+
+"✔ Generating AI Report"
+
+];
+
+let progress=0;
+
+let index=0;
+
+const bar=document.getElementById("loadingBar");
+
+const text=document.getElementById("stepText");
+
+const interval=setInterval(()=>{
+
+progress+=20;
+
+bar.style.width=progress+"%";
+
+text.innerHTML=steps[index];
+
+index++;
+
+if(progress>=100){
+
+clearInterval(interval);
+
+window.location.href="/result";
+
+}
+
+},500);
+
+</script>
+
+{% endblock %}

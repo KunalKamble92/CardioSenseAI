@@ -1,0 +1,344 @@
+{% extends "base.html" %}
+
+{% block title %}
+CardioSense AI
+{% endblock %}
+
+{% block content %}
+
+<section id="home" class="hero">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <!-- Left Side -->
+
+            <div class="col-lg-6">
+
+                <span class="badge bg-danger mb-3">
+
+                    AI Powered Healthcare
+
+                </span>
+
+                <h1 class="hero-title">
+
+                    CardioSense AI
+
+                </h1>
+
+                <h3 class="hero-subtitle">
+
+                    Heart Disease Risk Assessment
+
+                </h3>
+
+                <p class="hero-text">
+
+                    A machine learning powered platform that
+                    helps estimate heart disease risk using
+                    clinical patient information.
+
+                </p>
+
+                <a href="/prediction"
+                   class="btn btn-danger btn-lg hero-btn">
+
+                    Start Assessment
+
+                </a>
+
+            </div>
+
+            <!-- Right Side -->
+
+            <div class="col-lg-6 text-center">
+
+                <i class="fa-solid fa-heart-pulse hero-icon"></i>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="features" class="features-section">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="section-title">Why Choose CardioSense AI?</h2>
+
+            <p class="section-subtitle">
+                Intelligent, fast, and designed to help you better understand heart disease risk.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-3">
+                <div class="feature-card">
+                    <i class="fa-solid fa-brain"></i>
+                    <h4>AI Powered</h4>
+                    <p>Built using Machine Learning to estimate heart disease risk.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="feature-card">
+                    <i class="fa-solid fa-bolt"></i>
+                    <h4>Fast Analysis</h4>
+                    <p>Receive predictions within seconds after submitting your data.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="feature-card">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h4>Reliable</h4>
+                    <p>Model accuracy of 85.85% with a strong ROC-AUC score.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="feature-card">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                    <h4>Educational</h4>
+                    <p>Learn which factors influence heart disease risk.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Model Performance Section -->
+
+<section id="performance" class="performance-section">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="section-title">
+                Model Performance
+            </h2>
+
+            <p class="section-subtitle">
+                Built using Machine Learning and evaluated on a clinical heart disease dataset.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- Accuracy -->
+
+            <div class="col-md-6">
+
+                <div class="performance-card">
+
+                    <div class="circle">
+
+                        <span id="accuracy-number">0%</span>
+
+                    </div>
+
+                    <h4>Accuracy</h4>
+
+                </div>
+
+            </div>
+
+            <!-- ROC -->
+
+            <div class="col-md-6">
+
+                <div class="performance-card">
+
+                    <div class="circle blue">
+
+                        <span id="roc-number">0</span>
+
+                    </div>
+
+                    <h4>ROC-AUC</h4>
+
+                </div>
+
+            </div>
+
+            <!-- Dataset -->
+
+            <div class="col-md-6">
+
+                <div class="performance-card">
+
+                    <div class="circle green">
+
+                        <span>1025</span>
+
+                    </div>
+
+                    <h4>Clinical Records</h4>
+
+                </div>
+
+            </div>
+
+            <!-- Algorithm -->
+
+            <div class="col-md-6">
+
+                <div class="performance-card">
+
+                    <div class="algorithm-box">
+
+                        🤖
+
+                    </div>
+
+                    <h4>Logistic Regression</h4>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Workflow Section -->
+
+<section id="workflow" class="workflow-section">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <h2 class="section-title">How CardioSense AI Works</h2>
+            <p class="section-subtitle">
+                From patient information to AI-powered heart disease prediction.
+            </p>
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <div class="step-number">01</div>
+                <div class="timeline-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h5>Patient Data</h5>
+                <p>Clinical information is collected from the patient.</p>
+            </div>
+
+            <div class="timeline-arrow">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+
+            <div class="timeline-item">
+                <div class="step-number">02</div>
+                <div class="timeline-icon">
+                    <i class="fas fa-sliders-h"></i>
+                </div>
+                <h5>Feature Scaling</h5>
+                <p>Input values are standardized using the saved scaler.</p>
+            </div>
+
+            <div class="timeline-arrow">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+
+            <div class="timeline-item">
+                <div class="step-number">03</div>
+                <div class="timeline-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h5>AI Model</h5>
+                <p>Our trained Logistic Regression model analyzes the data.</p>
+            </div>
+
+            <div class="timeline-arrow">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+
+            <div class="timeline-item">
+                <div class="step-number">04</div>
+                <div class="timeline-icon">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <h5>Risk Report</h5>
+                <p>Risk probability and recommendations are generated.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="stats-section">
+
+    <div class="container">
+
+        <div class="row text-center">
+
+            <div class="col-md-4">
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    <h2>85.85%</h2>
+
+                    <p>Model Accuracy</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-heart-pulse"></i>
+
+                    <h2>0.93</h2>
+
+                    <p>ROC-AUC</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-robot"></i>
+
+                    <h2>Logistic Regression</h2>
+
+                    <p>AI Model</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,391 @@
+{% extends "base.html" %}
+
+{% block title %}Prediction{% endblock %}
+
+{% block content %}
+    <section class="prediction-section">
+
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <h1 class="display-4 fw-bold">
+                    Heart Disease Assessment
+                </h1>
+
+                <p class="prediction-subtitle">
+                    AI-powered heart disease prediction using Machine Learning.
+                </p>
+
+            </div>
+
+            <div class="row g-4">
+
+                <!-- LEFT COLUMN -->
+
+                <div class="col-lg-8">
+
+                    <form action="/predict" method="POST">
+
+                        <!-- Personal Card -->
+
+                        <div class="form-card">
+
+                            <h3 class="section-heading">
+                                <i class="fas fa-user me-2"></i>
+                                Personal Information
+                            </h3>
+
+                            <div class="row g-4">
+
+                                <div class="col-md-6">
+
+                                    <label>Age</label>
+
+                                    <input
+                                        type="number"
+                                        class="form-control"
+                                        name="age"
+                                        min="1"
+                                        max="120"
+                                        required>
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <label>Sex</label>
+
+                                    <select class="form-select" name="sex">
+
+                                        <option value="">Select</option>
+                                        <option value="1">Male</option>
+                                        <option value="0">Female</option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="form-card">
+
+                            <h3 class="section-heading">
+
+                            <i class="fas fa-heart me-2"></i>
+
+                            Heart Information
+
+                            </h3>
+
+                            <div class="row g-4">
+
+                                <div class="col-md-6">
+
+                                    <label>Chest Pain Type</label>
+
+                                    <select class="form-select" name="cp">
+
+                                        <option value="">Select</option>
+
+                                        <option value="0">Typical Angina</option>
+
+                                        <option value="1">Atypical Angina</option>
+
+                                        <option value="2">Non-anginal Pain</option>
+
+                                        <option value="3">Asymptomatic</option>
+
+                                    </select>
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <label>Resting Blood Pressure (mm Hg)</label>
+
+                                    <input type="number"
+                                    class="form-control"
+                                    name="trestbps"
+                                    required>
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <label>Cholesterol (mg/dl)</label>
+
+                                    <input type="number"
+                                    class="form-control"
+                                    name="chol"
+                                    required>
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <label>Maximum Heart Rate</label>
+
+                                    <input type="number"
+                                    class="form-control"
+                                    name="thalach"
+                                    required>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-card">
+
+<h3 class="section-heading">
+
+<i class="fas fa-stethoscope me-2"></i>
+
+Clinical Information
+
+</h3>
+
+<div class="row g-4">
+
+<div class="col-md-6">
+
+<label>Fasting Blood Sugar</label>
+
+<select class="form-select" name="fbs">
+
+<option value="">Select</option>
+<option value="1">Greater than 120 mg/dl</option>
+<option value="0">120 mg/dl or lower</option>
+
+</select>
+
+</div>
+
+<div class="col-md-6">
+
+<label>Rest ECG</label>
+
+<select class="form-select" name="restecg">
+
+<option value="">Select</option>
+<option value="0">Normal</option>
+<option value="1">ST-T Wave Abnormality</option>
+<option value="2">Left Ventricular Hypertrophy</option>
+
+</select>
+
+</div>
+
+<div class="col-md-6">
+
+<label>Exercise Induced Angina</label>
+
+<select class="form-select" name="exang">
+
+<option value="">Select</option>
+<option value="1">Yes</option>
+<option value="0">No</option>
+
+</select>
+
+</div>
+
+<div class="col-md-6">
+
+<label>ST Depression (Oldpeak)</label>
+
+<input
+type="number"
+step="0.1"
+class="form-control"
+name="oldpeak"
+required>
+
+</div>
+
+<div class="col-md-6">
+
+<label>ST Slope</label>
+
+<select class="form-select" name="slope">
+
+<option value="">Select</option>
+<option value="0">Upsloping</option>
+<option value="1">Flat</option>
+<option value="2">Downsloping</option>
+
+</select>
+
+</div>
+
+<div class="col-md-6">
+
+<label>Major Vessels (CA)</label>
+
+<select class="form-select" name="ca">
+
+<option value="">Select</option>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+
+</select>
+
+</div>
+
+<div class="col-md-6">
+
+<label>Thalassemia</label>
+
+<select class="form-select" name="thal">
+
+<option value="">Select</option>
+<option value="1">Normal</option>
+<option value="2">Fixed Defect</option>
+<option value="3">Reversible Defect</option>
+
+</select>
+
+</div>
+
+</div>
+
+</div>
+
+                        <div class="text-center mt-5">
+
+                            <button
+                            type="submit"
+                            class="btn predict-btn btn-lg px-5">
+
+                                <i class="fas fa-heartbeat me-2"></i>
+
+                                Start AI Assessment
+
+                            </button>
+
+                        </div>
+
+                    </form>
+                </div>
+
+                <!-- RIGHT COLUMN -->
+            <div class="col-lg-4">
+
+                <div class="ai-card">
+
+                    <div class="text-center">
+
+                        <div class="ai-icon">
+
+                            <i class="fas fa-robot"></i>
+
+                        </div>
+
+                        <h3>CardioSense AI</h3>
+
+                        <p class="text-muted">
+
+                            Your AI-powered healthcare assistant.
+
+                        </p>
+
+                    </div>
+
+                    <hr>
+
+                    <div class="info-item">
+
+                        <div>
+
+                            <small>Model Accuracy</small>
+
+                            <h5>85.85%</h5>
+
+                        </div>
+
+                    </div>
+
+                    <div class="info-item">
+
+                        <span>📈 ROC-AUC</span>
+
+                        <strong>0.91</strong>
+
+                    </div>
+
+                    <div class="info-item">
+
+                        <span>🧠 Model</span>
+
+                        <strong>Logistic Regression</strong>
+
+                    </div>
+
+                    <div class="info-item">
+
+                        <span>📊 Dataset</span>
+
+                        <strong>1025 Records</strong>
+
+                    </div>
+
+                    <hr>
+
+                    <div class="privacy-box">
+
+                        <h6><i class="fas fa-lock"></i>
+
+                        Privacy First</h6>
+
+                        <p>Your information is used only to generate
+                        this prediction and is never permanently stored.
+                        </p>
+
+                    </div>
+
+                </div>
+
+        </div>
+
+    </div>
+
+
+        </div>
+
+    </section>
+
+
+    <script>
+        const navbar = document.getElementById("navbar");
+
+        // Check if we are on the home page
+        const isHomePage = window.location.pathname === "/";
+
+        if (isHomePage) {
+
+            window.addEventListener("scroll", function () {
+
+                if (window.scrollY > 50) {
+                    navbar.classList.add("scrolled");
+                } else {
+                    navbar.classList.remove("scrolled");
+                }
+
+            });
+
+        } else {
+
+            // For prediction and other pages
+            navbar.classList.add("scrolled");
+
+        }
+    </script>
+{% endblock %}

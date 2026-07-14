@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="220" viewBox="0 0 900 220">
+<style>
+.red{stroke:#E63946;fill:none;stroke-width:10;stroke-linecap:round;stroke-linejoin:round}
+.blue{stroke:#1D3557;fill:none;stroke-width:10;stroke-linecap:round;stroke-linejoin:round}
+.t1{font:700 64px Arial;fill:#E63946}
+.t2{font:700 64px Arial;fill:#1D3557}
+.tag{font:600 18px Arial;fill:#1D3557;letter-spacing:4px}
+</style>
+<path class="red" d="M90 85 C90 40 150 30 180 70 C210 30 270 40 270 85"/>
+<path class="blue" d="M270 85 C270 150 215 175 180 195 C145 175 90 150 90 85"/>
+<polyline class="red" points="115,105 150,105 165,82 178,132 192,92 205,118 222,105 245,105"/>
+<g class="blue">
+<line x1="245" y1="80" x2="310" y2="80"/>
+<line x1="245" y1="110" x2="310" y2="110"/>
+<line x1="245" y1="140" x2="310" y2="140"/>
+<circle cx="320" cy="80" r="6" fill="#1D3557"/>
+<circle cx="320" cy="110" r="6" fill="#1D3557"/>
+<circle cx="320" cy="140" r="6" fill="#1D3557"/>
+</g>
+<text x="370" y="105" class="t1">Cardio</text>
+<text x="595" y="105" fill="#1D3557" font-family="Arial" font-size="64" font-weight="700">Sense</text>
+<text x="795" y="105" class="t1">AI</text>
+<line x1="370" y1="140" x2="840" y2="140" stroke="#E63946" stroke-width="3"/>
+<polyline points="545,140 560,140 568,128 576,152 586,136 594,140 610,140" fill="none" stroke="#E63946" stroke-width="3"/>
+<text x="390" y="175" class="tag">AI-POWERED HEART HEALTH ASSESSMENT</text>
+</svg>
